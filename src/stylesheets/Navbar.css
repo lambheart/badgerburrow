@@ -1,0 +1,28 @@
+.navigate {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    align-items: center;
+    background-color:blanchedalmond;
+}
+
+#logo-icon {
+    display: inline;
+    height: 70px;
+    padding-top: 15px;
+   
+    padding-left: 40px;
+    float: left;
+}
+
+#about-icon {
+    display: inline;
+    height: 70px;
+    padding-top: 15px;
+  
+    padding-left: 20px;
+    float: left;
+}
