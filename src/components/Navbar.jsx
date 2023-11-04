@@ -6,8 +6,19 @@ import "../stylesheets/Navbar.css";
 
 const Navbar = () => {
     return(
-        <div>
-            <h1>Navbar</h1>
+        <div class = "navigate">
+            <nav>
+                <i>
+                    <Link className = "text-link" to = "/">
+                        HOME
+                    </Link>
+                </i>
+                <i>
+                    <Link className = "text-link" to = "/about">
+                        ABOUT
+                    </Link>
+                </i>
+            </nav>
         </div>
     )
 }
