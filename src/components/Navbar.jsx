@@ -9,12 +9,12 @@ const Navbar = () => {
         <div class = "navigate">
             <nav>
                 <i>
-                    <Link className = "text-link" to = "/">
+                    <Link className = "text-link" to = "/studyspots/">
                         HOME
                     </Link>
                 </i>
                 <i>
-                    <Link className = "text-link" to = "/about">
+                    <Link className = "text-link" to = "/studyspots/about">
                         ABOUT
                     </Link>
                 </i>

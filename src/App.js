@@ -56,8 +56,8 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/studyspots/" element={<Home />} />
+          <Route path="/studyspots/about" element={<About />} />
         </Routes>
       </Router>
     </div>
