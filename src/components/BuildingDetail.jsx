@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import "../stylesheets/BuildingDetail.css";
 
 function BuildingDetail() {
   const [studySpots, setStudySpots] = useState([]);
@@ -17,16 +18,16 @@ function BuildingDetail() {
   }, [buildingName]);
 
     return (
-      <div>
+      <div class = "building">
         <h2>Study Spots in {buildingName}</h2>
-        <ul>
+        <div class = "gallery">
           {studySpots.map((spot) => (
-          <div>
-            <h1>{spot.name}</h1>
-                        <img src={spot.url} />
+          <div class="box">
+            <h3>{spot.name}</h3>
+            <img src={spot.url} />
           </div>
           ))}
-        </ul>
+        </div>
       </div>
     );
   }
