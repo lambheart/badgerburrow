@@ -1,5 +1,6 @@
 {
   "files": {
+<<<<<<< HEAD
     "main.css": "/studyspots/static/css/main.174f3b93.css",
     "main.js": "/studyspots/static/js/main.f46eca07.js",
     "static/js/787.d4aba7ab.chunk.js": "/studyspots/static/js/787.d4aba7ab.chunk.js",
@@ -15,4 +16,23 @@
     "static/css/main.174f3b93.css",
     "static/js/main.f46eca07.js"
   ]
+=======
+    "main.css": "/studyspots/static/css/main.14bd48e6.chunk.css",
+    "main.js": "/studyspots/static/js/main.8d384b3a.chunk.js",
+    "main.js.map": "/studyspots/static/js/main.8d384b3a.chunk.js.map",
+    "runtime~main.js": "/studyspots/static/js/runtime~main.66484089.js",
+    "runtime~main.js.map": "/studyspots/static/js/runtime~main.66484089.js.map",
+    "static/js/2.cb12c624.chunk.js": "/studyspots/static/js/2.cb12c624.chunk.js",
+    "static/js/2.cb12c624.chunk.js.map": "/studyspots/static/js/2.cb12c624.chunk.js.map",
+    "static/js/3.607b9e36.chunk.js": "/studyspots/static/js/3.607b9e36.chunk.js",
+    "static/js/3.607b9e36.chunk.js.map": "/studyspots/static/js/3.607b9e36.chunk.js.map",
+    "index.html": "/studyspots/index.html",
+    "precache-manifest.ff49e96928cda89da5a35883c643156f.js": "/studyspots/precache-manifest.ff49e96928cda89da5a35883c643156f.js",
+    "service-worker.js": "/studyspots/service-worker.js",
+    "static/css/main.14bd48e6.chunk.css.map": "/studyspots/static/css/main.14bd48e6.chunk.css.map",
+    "static/media/about_icon.png": "/studyspots/static/media/about_icon.3bbf5f46.png",
+    "static/media/large_logo.png": "/studyspots/static/media/large_logo.19957a37.png",
+    "static/media/logo_icon.png": "/studyspots/static/media/logo_icon.c016ae22.png"
+  }
+>>>>>>> f05bd74f7e406edc0a6bd37689ccaaf3e50c005a
 }
