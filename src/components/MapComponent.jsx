@@ -24,7 +24,7 @@ const Map = ({coords}) => {
              mapContainerStyle = {{
                 height:"800px",
              }}
-             center = {center}
+             center = {{lat: 43.0718099, lng: -89.4035395}}
              defaultZoom = {8}
              onLoad={onMapLoad}
             ></GoogleMap>
