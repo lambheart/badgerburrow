@@ -5,8 +5,12 @@ import "../stylesheets/Home.css";
 import large_logo from "../assets/large_logo.png";
 import MapComponent from "./MapComponent";
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
+import Building from './Building'
 
 
+function goToBuildingPage() {
+
+}
 
 export class Home extends Component {
 
@@ -33,6 +37,7 @@ state = {
                     key={index}
                     position={{ lat: spot.lat, lng: spot.long }}
                     name={spot.name}
+                    onClick={() => goToBuildingPage(spot.building)}
                 />
             ));
         }
@@ -54,6 +59,11 @@ state = {
                 <Marker onClick = {this.onMarkerClick}
                     name = {'Current location'} />
             </Map>
+            <Router>
+                <Routes>
+                    <Route path={"/studyspots/"+spot.building} element={<Building name={spot.building}/>} />
+                </Routes>
+            </Router>
         </div>
         );
         }
