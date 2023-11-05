@@ -6,6 +6,10 @@ const Map = ({coords}) => {
         googleMapsApiKey: 'AIzaSyB0DSQyxeTXhJzRNEVwQ3khFG7QHX53Yxo',
     });
     const mapRef = React.useRef();
+    const center = {
+      lat: coords.latitude,
+      lng: coords.longitude
+    };
     const onMapLoad = React.useCallback(map => {
         mapRef.current = map;
         const bounds = new window.google.maps.LatLngBounds(center);
@@ -20,7 +24,7 @@ const Map = ({coords}) => {
              mapContainerStyle = {{
                 height:"800px",
              }}
-             center = {{lat: coords.latitude, lng: coords.longitude}}
+             center = {center}
              defaultZoom = {8}
              onLoad={onMapLoad}
             ></GoogleMap>
