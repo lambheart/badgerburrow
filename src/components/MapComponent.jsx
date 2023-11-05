@@ -8,6 +8,8 @@ const Map = ({coords}) => {
     const mapRef = React.useRef();
     const onMapLoad = React.useCallback(map => {
         mapRef.current = map;
+        const bounds = new window.google.maps.LatLngBounds(center);
+        map.fitBounds(bounds);
     }, []);
     if (loadError) return "Error";
     if (!isLoaded) return "Maps";
