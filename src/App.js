@@ -12,8 +12,10 @@ import About from './components/About';
 import Map from './components/Map';
 
 function App() {
+  var coords;
   function success(pos) {
     var crd = pos.coords;
+    coords = crd;
     console.log("Your current position is:");
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude: ${crd.longitude}`);
@@ -57,9 +59,9 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/studyspots/" element={<Home />} />
+          <Route path="/studyspots/" element={<Home coords = {coords}/>} />
           <Route path="/studyspots/about" element={<About />} />
-          <Route path="/studyspots/map" element={<Map />} />
+          <Route path="/studyspots/map" element={<Map coords = {coords}/>} />
         </Routes>
       </Router>
     </div>
