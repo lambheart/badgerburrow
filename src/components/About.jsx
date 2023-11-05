@@ -10,7 +10,7 @@ const About = () => {
         <div class = "about page">
             <img id = 'large-logo' src = {large_logo} alt = "badger burrow"/>
 
-            <h3>why badger burrow?!</h3>
+            <h2>why badger burrow?!</h2>
 
             <p>
                 we are a group of underclassmen that created badger burrow to help fellow UW-Madison students
@@ -18,7 +18,7 @@ const About = () => {
                 we're here to help!
             </p>
 
-            <h3>how it works</h3>
+            <h2>how it works</h2>
 
             <p>
                 badger burrow will ask you for your current location. upon receiving your location, it will then recommend a few nearby study spots for you!
