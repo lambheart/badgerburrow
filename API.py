@@ -1,7 +1,9 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import sqlite3
 
 app = Flask(__name__)
+CORS(app)  # <- Set up CORS for the entire app
 
 @app.route('/api/study_spots')
 def get_study_spots():
