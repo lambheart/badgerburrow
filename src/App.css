@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@500&family=Gabarito&family=Montserrat:wght@500;700&family=Open+Sans:wght@700&family=Pixelify+Sans&display=swap');
+
 html {
   background-color: #bcbaa0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
 }
 
 .App {
