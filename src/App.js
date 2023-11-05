@@ -9,8 +9,9 @@ import './App.css';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import About from './components/About';
-import Map from './components/MapComponent';
-import Building from './components/Building';
+import Map from './components/Map';
+import BuildingDetail from './components/BuildingDetail';
+
 
 function App() {
   var coords;
@@ -63,7 +64,7 @@ function App() {
           <Route path="/studyspots/" element={<Home coords = {coords}/>} />
           <Route path="/studyspots/about" element={<About />} />
           <Route path="/studyspots/map" element={<Map coords = {coords}/>} />
-          <Route path="/studyspots/:buildingName" component={Building} />
+          <Route path="/studyspots/:buildingName" element={<BuildingDetail />} />
         </Routes>
       </Router>
     </div>
