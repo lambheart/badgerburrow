@@ -1,26 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-const Building = ({name}) => {
-    
-    const new_name = name.replace(/ /g, "%20").replace(/,/g, "%2C");
-    var spots = []
-    fetch('http://127.0.0.1:5000/api/study_spots/building/'+new_name)
-        .then(response => response.json())
-        .then(data => {
-            spots = data
-        })
+function BuildingDetail() {
+  const [studySpots, setStudySpots] = useState([]);
+  const { buildingName } = useParams();
+
+  useEffect(() => {
+    fetch(`/api/study_spots/building/${encodeURIComponent(buildingName)}`)
+      .then((response) => response.json())
+      .then((data) => {
+         setStudySpots(data);
+              })
+      .catch((error) => {
+        console.error('Error fetching study spots:', error);
+      });
+  }, [buildingName]);
 
     return (
-        <div>
-            {spots.map((spot) => (
-                <div>
-                    <img src={spot.img} />
-                    <h1>{spot.name}</h1>
-                </div>
-            ))}
-        </div>
-    )
+      <div>
+        <h2>Study Spots in {buildingName}</h2>
+        <ul>
+          {studySpots.map((spot) => (
+            <li key={spot.id}>
+              {spot.name} - <a href={spot.url}>More info</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
 
-};
-
-export default Building;
+export default BuildingDetail;
