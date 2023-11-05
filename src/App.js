@@ -9,7 +9,7 @@ import './App.css';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import About from './components/About';
-import Map from './components/Map';
+import Map from './components/MapComponent';
 
 function App() {
   var coords;
