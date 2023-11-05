@@ -5,11 +5,12 @@ import "../stylesheets/Home.css";
 import large_logo from "../assets/large_logo.png";
 import MapComponent from "./MapComponent";
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
-import Building from './Building'
+import { useHistory } from 'react-router-dom';
 
+const history = useHistory();
 
-function goToBuildingPage() {
-
+function goToBuildingPage(name) {
+    history.push(`/study_spots/building/${name}`);
 }
 
 export class Home extends Component {
@@ -59,11 +60,6 @@ state = {
                 <Marker onClick = {this.onMarkerClick}
                     name = {'Current location'} />
             </Map>
-            <Router>
-                <Routes>
-                    <Route path={"/studyspots/"+spot.building} element={<Building name={spot.building}/>} />
-                </Routes>
-            </Router>
         </div>
         );
         }
