@@ -21,9 +21,10 @@ function BuildingDetail() {
         <h2>Study Spots in {buildingName}</h2>
         <ul>
           {studySpots.map((spot) => (
-            <li key={spot.id}>
-              {spot.name} - <a href={spot.url}>More info</a>
-            </li>
+          <div>
+            <h1>{spot.name}</h1>
+                        <img src={spot.url} />
+          </div>
           ))}
         </ul>
       </div>
