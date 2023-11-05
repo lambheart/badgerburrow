@@ -1,9 +1,23 @@
-from flask import Flask, jsonify
+import os
+
+from flask import Flask, jsonify, send_from_directory
 from flask_cors import CORS
 import sqlite3
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='build', static_url_path='/')
 CORS(app)  # <- Set up CORS for the entire app
+
+@app.route('/')
+def serve():
+    return send_from_directory(app.static_folder, 'index.html')
+
+@app.route('/<path:path>')
+def static_proxy(path):
+    # send all other requests to the React app to handle.
+    file_name = path.split('/')[-1]
+    dir_name = os.path.join(app.static_folder, '/'.join(path.split('/')[:-1]))
+    return send_from_directory(dir_name, file_name)
+
 
 @app.route('/api/study_spots')
 def get_study_spots():
