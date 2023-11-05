@@ -25,7 +25,7 @@ function Home({ google }) {
       }, []);
 
     const onMarkerClick = (spot) => {
-        navigate(`/buildings/${encodeURIComponent(spot.name)}`);
+        navigate(`/studyspots/${encodeURIComponent(spot.building)}`);
       };
 
     const renderMarkers = () => {
