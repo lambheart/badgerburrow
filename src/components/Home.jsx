@@ -8,7 +8,7 @@ import Map from "./Map";
 
 const Home = ({coords}) => {
     return(
-        <div>
+        <div class = "home page">
             <h1></h1>
             <img id = 'large-logo' src = {large_logo} alt = "badger burrow"/>
 
