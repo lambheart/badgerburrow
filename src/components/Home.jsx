@@ -9,13 +9,22 @@ import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 
 export class Home extends Component {
-    render(coord) {
+    render() {
+        const initcrd = {lat:43.0766, lng: -89.4125}
         return(
         <div class = "home page">
             <h1></h1>
             <img id = 'large-logo' src = {large_logo} alt = "badger burrow"/>
 
-            <Map google = {this.props.google} />
+            <Map 
+                google = {window.google} 
+                zoom = {16} 
+                initialCenter = {initcrd}
+                
+            >
+                <Marker onClick = {this.onMarkerClick}
+                    name = {'Current location'} />
+            </Map>
         </div>
         );
         }
