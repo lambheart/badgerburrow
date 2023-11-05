@@ -9,6 +9,34 @@ import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 
 export class Home extends Component {
+
+state = {
+        study_spots: []
+    };
+
+    componentDidMount() {
+        fetch('http://127.0.0.1:5000/api/study_spots')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    study_spots: data
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching study spots:', error);
+            });
+    }
+
+    renderMarkers() {
+            return this.state.study_spots.map((spot, index) => (
+                <Marker
+                    key={index}
+                    position={{ lat: spot.lat, lng: spot.long }}
+                    name={spot.name}
+                />
+            ));
+        }
+
     render() {
         const initcrd = {lat:43.0766, lng: -89.4125}
         return(
@@ -17,11 +45,12 @@ export class Home extends Component {
             <img id = 'large-logo' src = {large_logo} alt = "badger burrow"/>
 
             <Map 
-                google = {window.google} 
+                google = {this.props.google}
                 zoom = {16} 
                 initialCenter = {initcrd}
                 
             >
+                 {this.renderMarkers()}
                 <Marker onClick = {this.onMarkerClick}
                     name = {'Current location'} />
             </Map>
