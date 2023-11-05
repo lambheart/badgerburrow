@@ -4,6 +4,10 @@ h3 {
     text-align: center;
     display:block;
     float:left;
+
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .box {
@@ -17,8 +21,7 @@ h3 {
 h2 {
     font-size: 40px;
     color: #d26347;
-    text-align: left;
-    padding-left: 18%;
+    text-align: center;
     
 }
 
@@ -28,8 +31,8 @@ h2 {
 }
 
 .gallery {
+    
     padding: 50px;
-    line-height: 0;
     -webkit-column-count:3;
     -webkit-column-gap:8px;
     -moz-column-count:3;
@@ -39,8 +42,8 @@ h2 {
 }
 
 .gallery img {
-    width: 100% !important;
-    height: auto !important;
+    width: 80%;
+    height: auto;
 }
 
 @media (max-width:1400px) {
