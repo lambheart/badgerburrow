@@ -3,7 +3,6 @@ import { Navigate, redirect, useNavigate, Link } from 'react-router-dom';
 import "../App.css";
 import "../stylesheets/Home.css";
 import large_logo from "../assets/large_logo.png";
-import MapComponent from "./MapComponent";
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import BuildingDetail from './BuildingDetail'
 
