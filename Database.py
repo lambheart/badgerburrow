@@ -1,6 +1,7 @@
 import sqlite3
 import requests
 import pandas as pd
+from urllib.parse import urlencode
 
 api_key = 'AIzaSyB0DSQyxeTXhJzRNEVwQ3khFG7QHX53Yxo'
 
@@ -18,33 +19,13 @@ def create_table():
     conn.execute('''CREATE TABLE IF NOT EXISTS study_spots (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         name TEXT NOT NULL,
-                        latitude REAL,
-                        longitude REAL,
+                        lat REAL,
+                        long REAL,
                         url TEXT,
                         building TEXT
                     );''')
     print("Table created successfully")
 
-# Function to get latitude and longitude from Google Maps API
-def get_lat_lng(address, api_key):
-    GOOGLE_MAPS_API_URL = 'https://maps.googleapis.com/maps/api/geocode/json'
-    params = {
-        'address': address,
-        'key': api_key
-    }
-    response = requests.get(GOOGLE_MAPS_API_URL, params=params)
-    if response.status_code == 200:  # A successful request
-        res = response.json()
-        if res['results']:
-            location = res['results'][0]['geometry']['location']
-            return location['lat'], location['lng']
-    return None, None
-
-# Iterate over the DataFrame and update it with latitude and longitude
-for index, row in df.iterrows():
-    lat, lng = get_lat_lng(row['building'], api_key)  # Assumes 'building' column contains the address
-    df.at[index, 'latitude'] = lat
-    df.at[index, 'longitude'] = lng
 # Create the table
 create_table()
 
