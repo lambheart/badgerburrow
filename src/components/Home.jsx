@@ -56,5 +56,5 @@ function Home({ google }) {
    }
 
    export default GoogleApiWrapper({
-     apiKey: 'AIzaSyB0DSQyxeTXhJzRNEVwQ3khFG7QHX53Yxo'
+     apiKey: GOOGLE_API_KEY
    })(Home);
