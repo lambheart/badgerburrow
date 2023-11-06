@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 from urllib.parse import urlencode
 
-api_key = 'AIzaSyB0DSQyxeTXhJzRNEVwQ3khFG7QHX53Yxo'
+api_key = GOOGLE_API_KEY
 
 # Connect to the SQLite database (it will be created if it does not exist)
 conn = sqlite3.connect('my_database.db')
