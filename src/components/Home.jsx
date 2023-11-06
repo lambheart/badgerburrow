@@ -56,5 +56,5 @@ function Home({ google }) {
    }
 
    export default GoogleApiWrapper({
-     apiKey: GOOGLE_API_KEY
+     apiKey: process.env.GOOGLE_API_KEY
    })(Home);
