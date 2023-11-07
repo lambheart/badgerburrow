@@ -23,6 +23,9 @@ h3 {
     font-size: 40px;
     color: #d26347;
     text-align: center;
+    margin-right: auto;
+    margin-left:auto;
+    padding-left: 0;
 }
 
 .building {
