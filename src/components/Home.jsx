@@ -13,7 +13,7 @@ function Home({ google }) {
   const navigate = useNavigate(); // useNavigate hook for navigation
 
     useEffect(() => {
-        fetch('https://studyspots-0c86b8a5475e.herokuapp.comapi/study_spots')
+        fetch('https://studyspots-0c86b8a5475e.herokuapp.com/api/study_spots')
           .then(response => response.json())
           .then(data => {
             setStudySpots(data);
