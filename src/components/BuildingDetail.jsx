@@ -7,7 +7,7 @@ function BuildingDetail() {
   let { buildingName } = useParams();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/api/study_spots/building/${buildingName}`)
+    fetch(`https://badger-burrow-60eff1a35ad3.herokuapp.com/api/study_spots/building/${buildingName}`)
       .then((response) => response.json())
       .then((data) => {
          setStudySpots(data);
