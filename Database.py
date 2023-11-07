@@ -6,7 +6,7 @@ import os
 from boto.s3.connection import S3Connection
 
 
-api_key = S3Connection(os.environ['GOOGLE_API_KEY'])
+api_key = 'AIzaSyB0DSQyxeTXhJzRNEVwQ3khFG7QHX53Yxo'
 
 # Connect to the SQLite database (it will be created if it does not exist)
 conn = sqlite3.connect('my_database.db')
