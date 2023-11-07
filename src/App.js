@@ -60,9 +60,9 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/studyspots/" element={<Home coords = {coords}/>} />
-          <Route path="/studyspots/about" element={<About />} />
-          <Route path="/studyspots/:buildingName" element={<BuildingDetail />} />
+          <Route path="/" element={<Home coords = {coords}/>} />
+          <Route path="/about" element={<About />} />
+          <Route path="/:buildingName" element={<BuildingDetail />} />
         </Routes>
       </Router>
     </div>

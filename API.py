@@ -1,15 +1,19 @@
 import os
 
 from flask import Flask, jsonify, send_from_directory
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 import sqlite3
 
-app = Flask(__name__, static_folder='build', static_url_path='/')
+app = Flask(__name__, static_url_path='/', static_folder='./build')
 CORS(app)  # <- Set up CORS for the entire app
 
 @app.route('/')
-def serve():
-    return send_from_directory(app.static_folder, 'index.html')
+def index():
+    return app.send_static_file('index.html')
+
+@app.errorhandler(404)
+def not_found(err):
+    return app.send_static_file('index.html')
 
 @app.route('/<path:path>')
 def static_proxy(path):
