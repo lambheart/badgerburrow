@@ -19,4 +19,4 @@ Badger Burrow will recommend a few nearby study spots for you on UW-campus! you 
 We would like to give credit to dancingbannana on Reddit and their dedication to making education accessible to all Badgers. Without their inital [website](https://buckygrades.com/study/) and [Reddit post](https://www.reddit.com/r/UWMadison/comments/11wrmr3/i_walked_4648_miles_through_every_building_on/), our project would not have been possible.
 
 ## Visit Our Website!
-badgerburrow.lambheart.pink/
+https://badgerburrow.lambheart.pink/
