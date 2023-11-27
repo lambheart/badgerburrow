@@ -45,6 +45,29 @@ def get_study_spots():
     # Return the list of study spots as JSON
     return jsonify(study_spots)
 
+@app.route('/api/study_spots/get_all_buildings')
+def get_all_buildings():
+    # Connect to the SQLite database
+    conn = sqlite3.connect('my_database.db')
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+
+    # Execute the query to all unique building names
+    cur.execute("SELECT DISTINCT building FROM study_spots")
+
+    # Fetch all results
+    rows = cur.fetchall()
+    console.log(rows)
+    # Convert the rows into a list of dicts to jsonify it later
+    all_buildings = [dict(row) for row in rows]
+
+    # Close the connection
+    conn.close()
+
+    # Return the list of study spots by building as JSON
+    return jsonify(all_buildings)
+
+
 @app.route('/api/study_spots/building/<building_name>')
 def get_study_spots_by_building(building_name):
     # Connect to the SQLite database

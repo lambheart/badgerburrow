@@ -1,10 +1,9 @@
-import React, { Component, useContext, useState, useEffect } from 'react';
-import { Navigate, redirect, useNavigate, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "../App.css";
 import "../stylesheets/Home.css";
-import large_logo from "../assets/large_logo.png";
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
-import BuildingDetail from './BuildingDetail'
+
 
 
 
@@ -42,7 +41,6 @@ function Home({ google }) {
 
      return (
        <div className="home page">
-         <img id='large-logo' src={large_logo} alt="badger burrow" />
          <Map
            google={google}
            zoom={16}
@@ -53,8 +51,8 @@ function Home({ google }) {
          </Map>
        </div>
      );
-   }
+}
 
-   export default GoogleApiWrapper({
-     apiKey: 'AIzaSyB0DSQyxeTXhJzRNEVwQ3khFG7QHX53Yxo'
-   })(Home);
+export default GoogleApiWrapper({
+  apiKey: 'AIzaSyB0DSQyxeTXhJzRNEVwQ3khFG7QHX53Yxo'
+})(Home);

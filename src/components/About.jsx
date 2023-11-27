@@ -1,5 +1,4 @@
-import React, { useContext, useState, useEffect} from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React from 'react';
 import "../App.css";
 import "../stylesheets/About.css";
 import large_logo from "../assets/large_logo.png";

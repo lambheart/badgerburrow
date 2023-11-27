@@ -1,15 +1,15 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
 } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import BuildingDetail from './components/BuildingDetail';
+import SubmissionPage from './components/SubmissionPage';
 
 
 function App() {
@@ -62,6 +62,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home coords = {coords}/>} />
           <Route path="/about" element={<About />} />
+          <Route path="/submit" element={<SubmissionPage />} />
           <Route path="/:buildingName" element={<BuildingDetail />} />
         </Routes>
       </Router>

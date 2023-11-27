@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect} from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import "../App.css";
 import "../stylesheets/Navbar.css";
 import logo_icon from "../assets/logo_icon.png";
@@ -17,6 +17,11 @@ const Navbar = () => {
                 </i>
                 <i>
                     <Link className = "nav-link" to = "/about">
+                        <img id = "about-icon" src = {about_icon} alt = "about icon"/>
+                    </Link>
+                </i>
+                <i>
+                    <Link className = "nav-link" to = "/submit">
                         <img id = "about-icon" src = {about_icon} alt = "about icon"/>
                     </Link>
                 </i>
