@@ -1,14 +1,14 @@
-import React, { Component, useContext, useState, useEffect } from 'react';
-import { Navigate, redirect, useNavigate, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "../App.css";
 import "../stylesheets/Home.css";
 import large_logo from "../assets/large_logo.png";
-import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
-import BuildingDetail from './BuildingDetail'
+import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 
 
 
-function Home({ google }) {
+
+function Home() {
   const [studySpots, setStudySpots] = useState([]);
   const navigate = useNavigate(); // useNavigate hook for navigation
 
@@ -39,22 +39,28 @@ function Home({ google }) {
       };
 
    const initialCenter = { lat: 43.0766, lng: -89.4125 };
+   const containerStyle = {
+       width: '100%',
+       height: '400px'
+   };
 
      return (
        <div className="home page">
          <img id='large-logo' src={large_logo} alt="badger burrow" />
-         <Map
-           google={google}
-           zoom={16}
-           initialCenter={initialCenter}
-         >
+         <LoadScript
+                 googleMapsApiKey="AIzaSyB0DSQyxeTXhJzRNEVwQ3khFG7QHX53Yxo"
+               >
+               <GoogleMap
+                         mapContainerStyle={containerStyle}
+                         center={initialCenter}
+                         zoom={16}
+                       >
            {renderMarkers()}
            <Marker onClick={() => navigate('/current-location')} name={'Current location'} />
-         </Map>
+         </GoogleMap>
+        </LoadScript>
        </div>
      );
    }
 
-   export default GoogleApiWrapper({
-     apiKey: 'AIzaSyB0DSQyxeTXhJzRNEVwQ3khFG7QHX53Yxo'
-   })(Home);
+   export default Home;

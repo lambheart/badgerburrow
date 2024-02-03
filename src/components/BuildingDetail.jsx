@@ -4,18 +4,32 @@ import "../stylesheets/BuildingDetail.css";
 
 function BuildingDetail() {
   const [studySpots, setStudySpots] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   let { buildingName } = useParams();
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(`https://studyspots-0c86b8a5475e.herokuapp.com/api/study_spots/building/${buildingName}`)
       .then((response) => response.json())
       .then((data) => {
          setStudySpots(data);
+         setIsLoading(false);
               })
       .catch((error) => {
         console.error('Error fetching study spots:', error);
+        setError(error);
+        setIsLoading(false);
       });
   }, [buildingName]);
+
+    if (isLoading) {
+        return <div>Loading...</div>;
+      }
+
+      if (error) {
+        return <div>Error: {error.message}</div>;
+      }
 
     return (
       <div class = "building">

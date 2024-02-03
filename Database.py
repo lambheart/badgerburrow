@@ -5,8 +5,7 @@ from urllib.parse import urlencode
 import os
 from boto.s3.connection import S3Connection
 
-
-api_key = 'AIzaSyB0DSQyxeTXhJzRNEVwQ3khFG7QHX53Yxo'
+api_key = os.getenv('GOOGLE_API_KEY')
 
 # Connect to the SQLite database (it will be created if it does not exist)
 conn = sqlite3.connect('my_database.db')
